@@ -4,7 +4,7 @@ import model.Cliente;
 import model.Vehiculo;
 
 import java.io.*;
-class GestorDatos {
+public class GestorDatos {
     private String archivo;
 
     public String getArchivo() {return archivo;}
@@ -29,7 +29,7 @@ class GestorDatos {
         }
     }
 
-    public void guardarVehiculo(Vehiculo vehiculo) {
+    public void registrarVehiculo(Vehiculo vehiculo) {
         try {
             FileWriter fw = new FileWriter(archivo, true);
             BufferedWriter bw = new BufferedWriter(fw);

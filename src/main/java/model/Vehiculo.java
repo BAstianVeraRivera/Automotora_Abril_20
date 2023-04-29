@@ -8,6 +8,15 @@ public class Vehiculo {
 	private String color;
 	private String marca;
 
+	public Vehiculo(String nombreVehiculo, int año, int precio, int kmRec, String color, String marca) {
+		this.nombreVehiculo = nombreVehiculo;
+		this.año = año;
+		this.precio = precio;
+		this.kmRec = kmRec;
+		this.color = color;
+		this.marca = marca;
+	}
+
 	public String getNombreVehiculo() {
 		return this.nombreVehiculo;
 	}

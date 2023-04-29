@@ -10,6 +10,14 @@ public class Cliente {
 	private String email;
 	public ControllerAutomotora unnamed_ControllerAutomotora_;
 
+	public Cliente(String nombre, String rut, int nroContacto, String direccion, String email) {
+		this.nombre = nombre;
+		this.rut = rut;
+		this.nroContacto = nroContacto;
+		this.direccion = direccion;
+		this.email = email;
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
