@@ -16,6 +16,9 @@ public class Vehiculo {
 		this.color = color;
 		this.marca = marca;
 	}
+	public String toString(){
+		return "\n Marca: "+this.marca+"\n Modelo: "+this.nombreVehiculo+"\n Año: "+this.año+"\n Color: "+this.color+"\n Kilometros Recorridos: "+this.kmRec+"\n Precio: "+this.precio+" CLP";
+	}
 
 	public String getNombreVehiculo() {
 		return this.nombreVehiculo;

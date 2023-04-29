@@ -73,8 +73,12 @@ class VentanaRegistrarVehiculo extends Ventana implements ActionListener {
             String marca = txtMarca.getText();
             Vehiculo vehiculo = new Vehiculo(nombreVehiculo, año, precio, kmRec, color, marca);
             gestor.registrarVehiculo(vehiculo);
+            JOptionPane.showMessageDialog(this, "Vehiculo registrado con éxito");
+            dispose();
+            new VentanaBienvenida("Iniciar sesión", 200, 100, gestor);
         } else if (e.getSource() == btnCancelar) {
             dispose();
+            new VentanaBienvenida("Iniciar sesión", 200, 100, gestor);
         }
     }
 }

@@ -5,8 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class VentanaBienvenida extends Ventana implements ActionListener {
-    private JButton btnRegistrarVehiculo, btnRegistrarCliente, btnSalir;
+public class VentanaBienvenida extends Ventana implements ActionListener {
+    private JButton btnRegistrarVehiculo, btnRegistrarCliente, btnSalir, btnBuscarVehiculo;
     private JPanel panel;
     private GestorDatos gestor;
 
@@ -19,17 +19,20 @@ class VentanaBienvenida extends Ventana implements ActionListener {
         setVisible(true);
     }
 
+
     private void crearComponentes() {
         btnRegistrarVehiculo = new JButton("Registrar vehículo");
         btnRegistrarCliente = new JButton("Registrar cliente");
+        btnBuscarVehiculo = new JButton("Buscar Vehículo");
         btnSalir = new JButton("Salir");
         panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 1));
+        panel.setLayout(new GridLayout(4, 1));
     }
 
     private void agregarComponentes() {
         panel.add(btnRegistrarVehiculo);
         panel.add(btnRegistrarCliente);
+        panel.add(btnBuscarVehiculo);
         panel.add(btnSalir);
 
         add(panel);
@@ -38,6 +41,7 @@ class VentanaBienvenida extends Ventana implements ActionListener {
     private void agregarEventos() {
         btnRegistrarVehiculo.addActionListener(this);
         btnRegistrarCliente.addActionListener(this);
+        btnBuscarVehiculo.addActionListener(this);
         btnSalir.addActionListener(this);
     }
 
@@ -48,6 +52,9 @@ class VentanaBienvenida extends Ventana implements ActionListener {
         } else if (e.getSource() == btnRegistrarCliente) {
             dispose();
             new VentanaRegistrarCliente("Registrar cliente", 300, 200, gestor);
+        } else if (e.getSource() == btnBuscarVehiculo) {
+            dispose();
+            new VentanaBuscarVehiculo("Buscar vehículo", 300, 200, gestor);
         } else if (e.getSource() == btnSalir) {
             System.exit(0);
         }

@@ -65,8 +65,12 @@ class VentanaRegistrarCliente extends Ventana implements ActionListener {
             String email = txtEmail.getText();
             Cliente cliente = new Cliente(nombre, rut, nroContacto, direccion, email);
             gestor.guardarCliente(cliente);
+            JOptionPane.showMessageDialog(this, "CLiente registrado con éxito");
+            dispose();
+            new VentanaBienvenida("Iniciar sesión", 200, 100, gestor);
         } else if (e.getSource() == btnCancelar) {
             dispose();
+            new VentanaBienvenida("Iniciar sesión", 200, 100, gestor);
         }
     }
 }
